@@ -10,20 +10,27 @@ A smart file organisation script that scans a selected folder and automatically 
 ## To test
 ### Dry run
 
+```powershell
 .\organize_media.ps1 -SourceFolder "D:\TestFolder" -DestinationFolder "D:\SortedMedia" -DryRun $true
+```
 
 #### Expected output
 
-[DRYRUN] Move D:\TestFolder\video.mp4 -> D:\SortedMedia\2024\02\video.mp4
+```
+.[DRYRUN] Move D:\TestFolder\video.mp4 -> D:\SortedMedia\2024\02\video.mp4
+```
 
 This gives you an overview of what will be moved.
 
 ### Real run
 
+```powershell
 .\organize_media.ps1 -SourceFolder "D:\TestFolder" -DestinationFolder "D:\SortedMedia" -DryRun $false
+```
 
 #### Example final structure
 
+```
 SortedMedia
  ├── 2022
  │   └── 11
@@ -37,6 +44,7 @@ SortedMedia
  │       └── 03
  │           concert.mp4
  └── duplicate_report.csv
+```
 
 
 ## Future Improvements
@@ -49,6 +57,7 @@ Documents
 
 Into something like:
 
+```
 Media
  ├── Photos
  │   └── 2024\03
@@ -56,3 +65,4 @@ Media
  │   └── 2024\03
  ├── Music
  └── Documents
+```
