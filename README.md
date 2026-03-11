@@ -11,7 +11,7 @@ A smart file organisation script that scans a selected folder and automatically 
 ### Dry run
 
 ```powershell
-.\organize_media.ps1 -SourceFolder "D:\TestFolder" -DestinationFolder "D:\SortedMedia" -DryRun $true
+.\organise_media.ps1 -SourceFolder "D:\TestFolder" -DestinationFolder "D:\SortedMedia" -DryRun $true
 ```
 
 #### Expected output
@@ -25,7 +25,7 @@ This gives you an overview of what will be moved.
 ### Real run
 
 ```powershell
-.\organize_media.ps1 -SourceFolder "D:\TestFolder" -DestinationFolder "D:\SortedMedia" -DryRun $false
+.\organise_media.ps1 -SourceFolder "D:\TestFolder" -DestinationFolder "D:\SortedMedia" -DryRun $false
 ```
 
 #### Example final structure
@@ -46,6 +46,10 @@ SortedMedia
  └── duplicate_report.csv
 ```
 
+## Troubleshooting
+```organise_media.ps1 cannot be loaded because running scripts is disabled on this system. For more information, see about_Execution_Policies at https:/go.microsoft.com/fwlink/?LinkID=135170.```
+This error means Windows security is blocking scripts. To fix it, you need to run PowerShell as normal user and execute:
+```Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned```
 
 ## Future Improvements
 - automatic self-organizing digital archive with daily scheduling so it automatically organise files as you download.
